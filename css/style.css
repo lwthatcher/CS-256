@@ -5,3 +5,28 @@
     transform: translate3d(-50%,-50%, 0);
     position: absolute;
 }
+
+.hm {
+    width: 50%;
+    height: 50%;
+}
+
+.hm_map {
+    background: #ccc;
+    float: left;
+}
+
+.hm_locations {
+    background: #bbb;
+    float: right;
+}
+
+.hm_emergency {
+    background: #aaa;
+    float: left;
+}
+
+.hm_settings {
+    background: #ddd;
+    float: right;
+}
