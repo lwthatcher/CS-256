@@ -40,3 +40,13 @@
     background: rgb(60, 120, 216);
     float: right;
 }
+
+.page-banner {
+    background: rgb(99, 210, 151);
+    height: 10%;
+}
+
+.page {
+    background: rgb(201, 218, 248);
+    height: 90%;
+}
