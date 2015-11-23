@@ -12,6 +12,11 @@
     box-sizing: border-box;
 }
 
+.hm_lbl {
+    font-family: sans-serif;
+    font-size: xx-large;
+}
+
 .hm_map {
     background: rgb(60, 120, 216);
     float: left;
