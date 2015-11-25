@@ -7,14 +7,27 @@
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script>
     function initialize() {
+      console.info('initializing google maps');
+
+      var provo_kml = 'https://sites.google.com/site/lwthatcherkmlfiles/kml/google_example3.kml';
+      var google_kml = 'https://sites.google.com/site/lwthatcherkmlfiles/google_example_kml/google_example.kml';
+
       var mapCanvas = document.getElementById('map');
       var mapOptions = {
-        center: new google.maps.LatLng(40.248570, -111.648517),
+        center: new google.maps.LatLng(40.248893, -111.648530),
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       var map = new google.maps.Map(mapCanvas, mapOptions);
-      console.info('initializing google maps');
+
+      var kmlUrl = google_kml;
+      var kmlOptions = {
+        suppressInfoWindows: true,
+        preserveViewport: false,
+        map: map
+      };
+      var kmlLayer = new google.maps.KmlLayer(kmlUrl, kmlOptions);
+      console.log(kmlLayer);
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
