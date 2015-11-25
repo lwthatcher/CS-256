@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Placemark>
+        <name>You</name>
+        <description>You Are Here.</description>
+        <Point>
+            <coordinates>40.248570, -111.648517,0</coordinates>
+        </Point>
+    </Placemark>
+    <Placemark>
+        <name>Google West Campus 1</name>
+        <styleUrl>#west_campus_style</styleUrl>
+        <ExtendedData>
+            <Data name="video">
+                <value><![CDATA[<iframe width="640" height="360"
+        src="http://www.youtube.com/embed/ZE8ODPL2VPI" frameborder="0"
+        allowfullscreen></iframe><br><br>]]></value>
+            </Data>
+        </ExtendedData>
+        <Point>
+            <coordinates>-122.0914977709329,37.42390182131783,0</coordinates>
+        </Point>
+    </Placemark>
+</kml>
