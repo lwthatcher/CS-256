@@ -64,6 +64,24 @@
     height: 90%;
 }
 
+.map {
+    background: black;
+    height: 80%;
+    width: 100%;
+}
+
+.map-links {
+    background: rgb(201, 218, 248);
+    height: 20%;
+    width: 100%;
+}
+
+.map-links-idv {
+    color: black;
+    float: left;
+    width: 33.33333333%;
+}
+
 .button {
     background: rgb(60, 120, 216);
     cursor: pointer;
