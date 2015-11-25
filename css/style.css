@@ -45,11 +45,14 @@
     background: rgb(99, 210, 151);
     height: 10%;
     border-bottom: 1px solid black;
+    display: inline-block;
 }
 
-label.banner {
+.section-title {
     font-size: x-large;
     color: black;
+    display: inline-block;
+    padding-top: 15px;
 }
 
 .banner-icon {
