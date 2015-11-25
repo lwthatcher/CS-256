@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script>
+    function initialize() {
+      var mapCanvas = document.getElementById('map');
+      var mapOptions = {
+        center: new google.maps.LatLng(40.248570, -111.648517),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      console.info('initializing google maps');
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
   <title>Find Your Child App</title>
 </head>
 <body>
@@ -26,7 +40,7 @@
         </div>
       </div>
       <div class="page">
-        <div class="map"></div>
+        <div id="map" class="map"></div>
         <div class="map-links">
           <div class="map-links-idv">
             Satellite
