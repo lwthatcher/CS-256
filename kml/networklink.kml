@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
-    <NetworkLink>
-        <Link>
-            <href>http://sites.google.com/site/lwthatcherkmlfiles/google_example_kml/google_example.kml</href>
-        </Link>
-    </NetworkLink>
-</kml>
