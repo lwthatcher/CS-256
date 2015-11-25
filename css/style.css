@@ -63,6 +63,7 @@ label.banner {
 
 .button {
     background: rgb(60, 120, 216);
+    cursor: pointer;
 }
 
 .left {
@@ -77,6 +78,7 @@ label.banner {
     width: 25%;
     height: 100%;
     border-left: 1px solid black;
+    onclick: window.location='home.html';
 }
 
 .anchor {
