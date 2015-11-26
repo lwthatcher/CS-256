@@ -1,11 +1,19 @@
+#map {
+	position:relative;
+}
+
 #radar {
-    position:relative;
-    width:400px;
-    height:400px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width:370px;
+    height:375px;
     margin:20px auto;
     border:3px solid #0c0;
     background-color:#020;
     border-radius:50%;
+    opacity: 0.5;
 }
 #radar>* {position:absolute}
 .beacon {
