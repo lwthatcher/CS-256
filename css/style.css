@@ -10,6 +10,7 @@
     width: 50%;
     height: 50%;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .hm_lbl {
@@ -71,7 +72,7 @@
 }
 
 .map-links {
-	border-bottom: 1px solid black;
+	border-top: 1px solid black;
 	box-sizing: border-box;
     background: rgb(201, 218, 248);
     height: 20%;
@@ -79,6 +80,7 @@
 }
 
 .map-links-idv {
+	cursor: pointer;
     color: black;
     float: left;
     width: 33.33333333%;
