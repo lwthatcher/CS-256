@@ -8,27 +8,32 @@
   <script>
     function initialize() {
       console.info('initializing google maps');
-
+      var byu = {lat: 40.248679, lng: -111.648513};
       var mapCanvas = document.getElementById('map');
       var mapOptions = {
-        center: new google.maps.LatLng(40.248679, -111.648513),
+        center: byu,
         zoom: 15,
-        mapTypeControl: false,
-        streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       var map = new google.maps.Map(mapCanvas, mapOptions);
 
-      var marker = new google.maps.Marker({
-        position: {lat: 40.248679, lng: -111.648513},
-        map: map,
-        label: 'You',
-        title: 'You are here.'
+      var panorama = new google.maps.StreetViewPanorama(
+      document.getElementById('map'), {
+        position: byu,
+        disableDefaultUI: true,
+        panControl: true,
+        scrollwheel: true,
+        pov: {
+          heading: 34,
+          pitch: 10
+        }
       });
+
+      map.setStreetView(null);
 
       var child1 = new google.maps.Marker({
         position: {lat: 40.248660, lng: -111.648803},
-        map: map,
+        map: panorama,
         label: 'Sally',
         title: 'Sally.',
         zIndex: 12
@@ -36,17 +41,19 @@
 
       var child2 = new google.maps.Marker({
         position: {lat: 40.251525, lng: -111.647775},
-        map: map,
+        map: panorama,
         label: 'Billy',
         title: 'Billy.'
       });
 
       var child3 = new google.maps.Marker({
         position: {lat: 40.248215, lng: -111.620414},
-        map: map,
+        map: panorama,
         label: 'Fred',
         title: 'Fred.'
       });
+
+
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
@@ -66,7 +73,7 @@
         <div class="button left" onclick="window.location='home.html';">
           <img src="../images/back_02.png" width="80%" height="80%" class="banner-icon"/>
         </div>
-        <div class="section-title">Map View</div>
+        <div class="section-title">3D View</div>
         <div class="button right" onclick="window.location='home.html';">
           <img src="../images/home_02.png" width="70%" height="80%" class="banner-icon"/>
         </div>
@@ -74,15 +81,15 @@
       <div class="page">
         <div id="map" class="map"></div>
         <div class="map-links">
-          <div class="map-links-idv" onclick="window.location='satellite.html';">
-            Satellite
-            <img src="../images/satellite_01.png" width="80%" height="80%">
+          <div class="map-links-idv" onclick="window.location='map.html';">
+            Map View
+            <img src="../images/map_icon_01.png" width="80%" height="80%">
           </div>
           <div class="map-links-idv">
             Short Range
             <img src="../images/radar_icon_01.png" width="80%" height="80%">
           </div>
-          <div class="map-links-idv" onclick="window.location='3D_view.html';">
+          <div class="map-links-idv">
             3D Mode
             <img src="../images/3D_mode_icon_02.png" width="80%" height="80%">
           </div>
