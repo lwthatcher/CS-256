@@ -71,6 +71,8 @@
 }
 
 .map-links {
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
     background: rgb(201, 218, 248);
     height: 20%;
     width: 100%;
