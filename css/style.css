@@ -47,6 +47,7 @@
     height: 10%;
     border-bottom: 1px solid black;
     display: inline-block;
+    box-sizing: border-box;
 }
 
 .section-title {
