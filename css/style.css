@@ -107,6 +107,47 @@
     onclick: window.location='home.html';
 }
 
+.emergency{
+    width: 85%;
+    height: 10%;
+    text-align: left;
+    text-indent: 3%;
+    vertical-align: middle;
+    margin-top: 5%;    
+    margin-left: 7.5%;
+    padding-top: 10%;
+    cursor: pointer;
+}
+
+.contact{
+    margin-top: 0px;
+    padding-top: 3%;
+    float: left;    
+}
+
+.directions{
+    width: 70%;
+    height: 80%;
+    margin-top: 1%;
+    padding-top: 3%;
+    vertical-align: middle;
+}
+.hospitals{
+    background: rgb(60, 120, 216);
+    float: left;
+    font-family: sans-serif;
+    font-size: large;
+    border: 1px solid black;
+}
+
+.nineoneone{
+    background: rgb(256, 0, 0);
+    float: left;
+    font-family: sans-serif;
+    font-size: large;
+    margin-top: 50px;
+    border: 1px solid black;
+}
 .anchor {
     cursor: pointer;
 }
