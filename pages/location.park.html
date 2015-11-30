@@ -38,6 +38,30 @@
       var map = new google.maps.Map(mapCanvas, mapOptions);
       map.setOptions({styles: styleArray});
 
+      // Define the LatLng coordinates for the polygon's path.
+      var locCoords = [
+        {lat: 40.25661600285842, lng: -111.64509952068329},
+        {lat: 40.25664875403261, lng: -111.64333999156952},
+        {lat: 40.255019363894014, lng: -111.64340436458588},
+        {lat: 40.255011175904805, lng: -111.6451746225357},
+        {lat: 40.255289566982455, lng: -111.64516389369965},
+        {lat: 40.25537963443884, lng: -111.64496004581451},
+        {lat: 40.25566621191158, lng: -111.64494931697845},
+        {lat: 40.255789030456945, lng: -111.64486348628998},
+        {lat: 40.255887285132715, lng: -111.6448849439621},
+        {lat: 40.255887285132715, lng: -111.64507806301117}
+      ];
+
+      // Construct the polygon.
+      var park = new google.maps.Polygon({
+        paths: locCoords,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.15
+      });
+      park.setMap(map);
 
       var marker = new google.maps.Marker({
         position: {lat: 40.248679, lng: -111.648513},
