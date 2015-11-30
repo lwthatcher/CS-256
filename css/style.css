@@ -160,7 +160,6 @@
     text-align: left;
     text-indent: 3%;
     vertical-align: middle;
-    margin-top: 5%;
     margin-left: 7.5%;
     padding-top: 1%;
     background: rgb(60, 120, 216);
@@ -186,4 +185,15 @@
     width: 15%;
     text-align: left;
     cursor: pointer;
+}
+
+.alt {
+    background: rgb(109, 158, 235);
+}
+
+.location-header {
+    margin-left: 7.5%;
+    text-align: left;
+    color: black;
+    font-size: xx-large;
 }
