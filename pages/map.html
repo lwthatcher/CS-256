@@ -5,9 +5,12 @@
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
   <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/jquery.session.js"></script>
   <script>
     function initialize() {
       console.info('initializing google maps');
+      console.log($.session.get('hello'));
 
       var mapCanvas = document.getElementById('map');
       var mapOptions = {
