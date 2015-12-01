@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/onoffswitch.css" type="text/css">
   <title>Find Your Child App</title>
 </head>
 <body>
@@ -17,26 +18,30 @@
     <div class="screen">
       <!-- Content goes here -->
       <div class="page-banner">
-        <div class="button left" onclick="window.location='home.html';">
+        <div class="button left" onclick="window.location='preferences.html';">
           <img src="../images/back_02.png" width="80%" height="80%" class="banner-icon"/>
         </div>
-        <div class="section-title">Settings</div>
+        <div class="section-title">Battery Saver</div>
         <div class="button right" onclick="window.location='home.html';">
           <img src="../images/home_02.png" width="70%" height="80%" class="banner-icon"/>
         </div>
       </div>
       <div class="page">
         <!-- Content goes here -->
-        <div class="emergency hospitals" onclick="window.location='devices.html';">
-          Device Management
-        </div>
-        <div class="emergency hospitals" onclick="window.location='preferences.html';">
-          Preferences
-        </div>
-        </div>
+          <div class="emergency hospitals">
+              Battery Saver Mode
+              <div class="onoffswitch">
+                  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                  </label>
+              </div>
+          </div>
       </div>
     </div>
     <div class="home"></div>
     <div class="bottom-bar"></div>
+  </div>
 </body>
 </html>
