@@ -19,7 +19,7 @@ var curr = $('.page').html();
     	});
 
     	$('.cancel-text').on('click',function(){
-       		$('.page').html(curr);
+       		$(this).closest('.add-child').remove();
 
     	});
     });
