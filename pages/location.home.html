@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
   <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/jquery.session.js"></script>
   <script>
     function initialize() {
       console.info('initializing google maps');
@@ -45,10 +47,11 @@
         {lat: 40.25814607984728, lng: -111.64199218153954},
         {lat: 40.25823614350147, lng: -111.64226040244102}
       ];
-
+      var hm_coord = $.session.get('loc_home');
+      console.log(JSON.stringify(hm_coord));
       // Construct the polygon.
       var location = new google.maps.Polygon({
-        paths: locCoords,
+        paths: hm_coord,
         strokeColor: '#0000FF',
         strokeOpacity: 0.8,
         strokeWeight: 2,
