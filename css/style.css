@@ -208,7 +208,7 @@
     float: left;
     font-family: sans-serif;
     font-size: large;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .options-bar {
@@ -216,7 +216,7 @@
 	float: left;
 	font-family: sans-serif;
 	font-size: large;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	width: 85%;
 	height: 10%;
 	text-align: left;
