@@ -43,9 +43,10 @@
 }
 
 .page-banner {
-    background: rgb(99, 210, 151);
+    background: rgb(60, 120, 216);
+    /*background: rgb(99, 210, 151);*/
     height: 10%;
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
     display: inline-block;
     box-sizing: border-box;
 }
@@ -53,8 +54,11 @@
 .section-title {
     font-size: x-large;
     color: black;
+    font-weight: bold;
     display: inline-block;
     padding-top: 15px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .banner-icon {
@@ -88,7 +92,7 @@
 }
 
 .button {
-    background: rgb(60, 120, 216);
+    /*background: rgb(60, 120, 216);*/
     cursor: pointer;
 }
 
@@ -96,14 +100,14 @@
     float: left;
     width: 25%;
     height: 100%;
-    border-right: 1px solid black;
+    /*border-right: 1px solid black;*/
 }
 
 .right {
     float: right;
     width: 25%;
     height: 100%;
-    border-left: 1px solid black;
+    /*border-left: 1px solid black;*/
     onclick: window.location='home.html';
 }
 
@@ -160,12 +164,13 @@
     text-indent: 3%;
     vertical-align: middle;
     margin-left: 7.5%;
+    margin-bottom: 2%;
     padding-top: 1%;
     background: rgb(60, 120, 216);
     float: left;
     font-family: sans-serif;
     font-size: large;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .loc_name {
@@ -221,6 +226,7 @@
 .table-header {
     margin-left: 7.5%;
     width: 85%;
+    padding-top: 2%;
 }
 
 .table-header-row {
