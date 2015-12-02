@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../css/style.css" type="text/css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="../js/jquery.session.js"></script>
+  <script src="../js/children.js"></script>
   <title>Find Your Child App</title>
 </head>
 <body>
@@ -47,9 +48,11 @@
       location: {lat: 40.258235, lng: -111.642044}
     }
 
-    $.session.set('children', [child1, child2, child3, child4, child5, child6]);
+    $.session.clear();
+    $.session.set('children', toChildMap([child1, child2, child3, child4, child5, child6]));
     $.session.set('registered_devices', [1, 2, 3]);
     $.session.set('your_location', {lat: 40.248679, lng: -111.648513});
+    console.log('registered', getRegisteredChildren());
 
     var home_poly = [
         {lat: 40.258338488417536, lng: -111.64219871163368},
