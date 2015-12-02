@@ -10,6 +10,47 @@
 </head>
 <body>
 <script>
+
+    var child1 = {
+      name: 'Sally',
+      device_id: 1,
+      location: {lat: 40.248660, lng: -111.648803}
+    }
+
+    var child2 = {
+      name: 'Billy',
+      device_id: 2,
+      location: {lat: 40.251525, lng: -111.647775}
+    }
+
+    var child3 = {
+      name: 'Fred',
+      device_id: 3,
+      location: {lat: 40.248215, lng: -111.620414}
+    }
+
+    var child4 = {
+      name: 'Tom',
+      device_id: 4,
+      location: {lat: 40.223545, lng: -111.644433}
+    }
+
+    var child5 = {
+      name: 'George',
+      device_id: 5,
+      location: {lat: 40.256313, lng: -111.643755}
+    }
+
+    var child6 = {
+      name: 'Beth',
+      device_id: 6,
+      location: {lat: 40.258235, lng: -111.642044}
+    }
+
+    $.session.set('children', [child1, child2, child3, child4, child5, child6]);
+    $.session.set('registered_devices', [1, 2, 3]);
+    $.session.set('your_location', {lat: 40.248679, lng: -111.648513});
+
     var home_poly = [
         {lat: 40.258338488417536, lng: -111.64219871163368},
         {lat: 40.258256612497064, lng: -111.64193585515022},
