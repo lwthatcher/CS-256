@@ -10,7 +10,6 @@
   <script>
     function initialize() {
       console.info('initializing google maps');
-      console.log($.session.get('hello'));
 
       var mapCanvas = document.getElementById('map');
       var mapOptions = {
@@ -35,7 +34,6 @@
         map: map,
         label: 'Sally',
         title: 'Sally.',
-        zIndex: 12
       });
 
       var child2 = new google.maps.Marker({
