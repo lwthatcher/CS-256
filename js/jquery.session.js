@@ -80,14 +80,33 @@
             delete this._cookieCache[key];
         },
 
-        get: function(key)
-        {
-            return window.sessionStorage.getItem(key) || this._getFallback(key);
-        },
-
-        set: function(key, value, onceOnly)
+        _isJsonString: function(str)
         {
             try {
+                JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
+        },
+
+        get: function(key, jsonify)
+        {
+            jsonify = typeof jsonify !== 'undefined' ? jsonify : true;
+            var result = window.sessionStorage.getItem(key) || this._getFallback(key);
+            if (jsonify && this._isJsonString(result)) {
+                result = JSON.parse(result);
+            }
+            return result;
+        },
+
+        set: function(key, value, onceOnly, jsonify)
+        {
+            try {
+                jsonify = typeof jsonify !== 'undefined' ? jsonify : true;
+                if (jsonify && (typeof value =='object' || typeof value =='array')) {
+                    value = JSON.stringify(value);
+                }
                 window.sessionStorage.setItem(key, value);
             } catch (e) {}
             this._setFallback(key, value, onceOnly || false);
