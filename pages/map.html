@@ -10,6 +10,9 @@
   <script src="../js/children.js"></script>
   <script src="../js/map.js"></script>
   <script>
+
+    var map;
+
     function initialize() {
       console.info('initializing google maps');
 
@@ -22,7 +25,7 @@
         streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      var map = new google.maps.Map(mapCanvas, mapOptions);
+      map = new google.maps.Map(mapCanvas, mapOptions);
 
       var marker = new google.maps.Marker({
         position: {lat: 40.248679, lng: -111.648513},
@@ -33,6 +36,11 @@
 
       add_child_markers(getRegisteredChildren(), map);
     }
+
+    function setSatelliteMode() {
+       map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+    }
+
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
   <title>Find Your Child App</title>
@@ -59,7 +67,7 @@
       <div class="page">
         <div id="map" class="map"></div>
         <div class="map-links">
-          <div class="map-links-idv" onclick="window.location='satellite.html';">
+          <div id="sat-map" class="map-links-idv" onclick="setSatelliteMode()">
             Satellite
             <img src="../images/satellite_01.png" width="80%" height="80%">
           </div>
