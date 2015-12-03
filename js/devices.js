@@ -26,5 +26,5 @@ var curr = $('.page').html();
 
     $('.removed').on('click',function(){
     	$(this).closest('.location').remove();
-    })
+    });
 });
