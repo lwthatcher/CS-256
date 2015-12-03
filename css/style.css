@@ -409,3 +409,14 @@
 .home {
     cursor: pointer;
 }
+
+.icon-right {
+    vertical-align: top;
+    float: right;
+    width: 30%;
+
+    margin-right: 2.5%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-60%);
+}
