@@ -8,7 +8,7 @@
 
 .hm {
     width: 50%;
-    height: 50%;
+    height: 40%;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -18,21 +18,21 @@
     font-size: xx-large;
 }
 
-.hm_map {
+.hm_children {
     background: rgb(60, 120, 216);
     float: left;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
 
-.hm_locations {
+.hm_map {
     background: rgb(60, 120, 216);
     float: right;
     border-bottom: 1px solid black;
 }
 
-.hm_emergency {
-    background: rgb(204, 0, 0);
+.hm_locations {
+    background: rgb(60, 120, 216);
     float: left;
     border-right: 1px solid black;
 }
@@ -40,6 +40,15 @@
 .hm_settings {
     background: rgb(60, 120, 216);
     float: right;
+}
+
+.hm_emergency {
+    float: left;
+    background: rgb(204, 0, 0);
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .page-banner {
