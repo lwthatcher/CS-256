@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/jquery.session.js"></script>
+  <script src="../js/children.js"></script>
+  <script src="../js/map.js"></script>
   <title>Find Your Child App</title>
 </head>
 <body>
@@ -43,7 +47,7 @@
         <div class="location alt">
           <div class="loc_name">School</div>
           <div  class="loc_map" onclick="window.location='location.school.html';">View<img src="../images/map_icon_02.png" width="90%" height="90%"/></div>
-          <div  class="loc_edit" onclick="window.location='location.home.html';">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
+          <div  class="loc_edit" onclick="goToMap(3)">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
           <div class="loc_approved">7:00am - 3:00pm</div>
         </div>
         <div class="location">

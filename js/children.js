@@ -26,3 +26,9 @@ function toChildMap(children) {
 function getYourLocation() {
     return $.session.get('your_location');
 }
+
+function getChildLocation(child_id) {
+    children = $.session.get('children');
+    child = children[child_id];
+    return child.location;
+}

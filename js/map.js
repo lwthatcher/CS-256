@@ -30,3 +30,22 @@ function add_your_location_marker(loc, map) {
       icon: youIcon
     });
 }
+
+function goToMap(child_id) {
+    if (typeof child_id !== 'undefined') {
+        $.session.set('map_origin', getChildLocation(child_id));
+    }
+    else {
+        $.session.set('map_origin', getYourLocation());
+    }
+    window.location='map.html';
+}
+
+function goToLocation() {
+
+}
+
+function getOrigin() {
+    loc = $.session.get('map_origin');
+    return typeof loc !== 'undefined' ? loc : getYourLocation();
+}
