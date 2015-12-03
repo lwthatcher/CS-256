@@ -110,13 +110,25 @@
     font-size: 23px;
 }
 
+.input-field{
+    display: inline-block;
+    margin-top: 5%;
+    font-size: 23px;
+}
+
+.id-title{
+    display: inline-block;
+    margin-top: 5%;
+    font-size: 23px;
+}
+
 #new-name{
     font-size: 18px;
 }
 
 .add-child{
     background: rgb(60, 120, 216);
-    height: 18%;
+    height: 25%;
     width: 85%;
     margin-top: 3%;
     margin-left: 7.5%;
