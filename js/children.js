@@ -22,3 +22,7 @@ function toChildMap(children) {
     console.log('children', child_map);
     return child_map;
 }
+
+function getYourLocation() {
+    return $.session.get('your_location');
+}
