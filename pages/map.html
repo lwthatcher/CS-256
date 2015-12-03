@@ -35,16 +35,15 @@
 
       var youIcon = new google.maps.MarkerImage(
             '../images/youIcon.png', //url
-            new google.maps.Size(iconWidth, iconHeight), //size
+            new google.maps.Size(iconWidth*scale, iconHeight*scale), //size
             new google.maps.Point(0,0), //origin
-            new google.maps.Point(0,0), //anchor
+            new google.maps.Point((iconWidth/2)*scale, iconHeight*scale), //anchor
             new google.maps.Size(iconWidth*scale,iconHeight*scale)
     );
 
       var marker = new google.maps.Marker({
         position: {lat: 40.248679, lng: -111.648513},
         map: map,
-        label: 'You',
         title: 'You are here.',
         icon: youIcon
       });
