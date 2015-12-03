@@ -31,6 +31,13 @@ function add_your_location_marker(loc, map) {
     });
 }
 
+function clearMapCache() {
+    console.log('clearing cache');
+    $.session.remove('map_origin');
+    $.session.remove('map_zoom');
+    $.session.remove('map_location');
+}
+
 function goToMap(child_id) {
     if (typeof child_id !== 'undefined') {
         $.session.set('map_origin', getChildLocation(child_id));
@@ -46,6 +53,7 @@ function goToLocation() {
 }
 
 function getOrigin() {
+    console.log('getting origin');
     loc = $.session.get('map_origin');
     return typeof loc !== 'undefined' ? loc : getYourLocation();
 }
