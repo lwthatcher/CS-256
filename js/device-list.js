@@ -10,14 +10,19 @@ function populatePage() {
 }
 
 function generateDiv(child) {
+    var child_id_str = 'child-' + child.device_id.toString();
     var result =
-        '<div class="child alt" onclick="goToMap(' + child.device_id + ')" >' +
+        '<div class="child alt" id="' + child_id_str + '" >' +
             '<div class="child-name">' +
                 child.name +
             '</div>' +
-            '<div class="icon-right-small">' +
-                '<img src="../images/child_02.png" width="70%" height="70%"/>' +
+            '<div class="icon-right-small link" onclick="removeChildFromPage(\''+ child_id_str + '\');" >' +
+                '<img src="../images/x_icon_02.png" width="70%" height="70%"/>' +
             '</div>' +
         '</div>';
     return result;
+}
+
+function removeChildFromPage(child_id_str) {
+    $('#'+child_id_str).remove();
 }

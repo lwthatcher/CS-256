@@ -32,3 +32,11 @@ function getChildLocation(child_id) {
     child = children[child_id];
     return child.location;
 }
+
+function removeChild(child_id) {
+    devices = $.session.get('registered_devices');
+    var idx = devices.indexOf(child_id);
+    if (idx > -1) {
+        devices.splice(idx, 1);
+    }
+}
