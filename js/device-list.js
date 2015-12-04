@@ -16,14 +16,15 @@ function generateDiv(child) {
             '<div class="child-name">' +
                 child.name +
             '</div>' +
-            '<div class="icon-right-small link" onclick="removeChildID(\''+ child_id_str + '\');" >' +
+            '<div class="icon-right-small link" onclick="removeChildID(\''+ child.device_id + '\');" >' +
                 '<img src="../images/x_icon_02.png" width="70%" height="70%"/>' +
             '</div>' +
         '</div>';
     return result;
 }
 
-function removeChildID(child_id_str) {
+function removeChildID(child_id) {
+    var child_id_str = 'child-' + child_id.toString();
     $('#'+child_id_str).remove();
-
+    unregisterChild(child_id);
 }

@@ -34,9 +34,14 @@ function getChildLocation(child_id) {
 }
 
 function unregisterChild(child_id) {
+    console.log('removing child:', child_id);
     devices = $.session.get('registered_devices');
-    var idx = devices.indexOf(child_id);
-    if (idx > -1) {
-        devices.splice(idx, 1);
+    for (i = 0; i < devices.length; i++)
+    {
+        if (devices[i] == child_id) {
+            devices.splice(i, 1);
+        }
     }
+    console.log('registered devices:', devices);
+    $.session.set('registered_devices', devices);
 }
