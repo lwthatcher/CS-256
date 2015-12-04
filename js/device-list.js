@@ -40,14 +40,38 @@ function openAddChildDialog() {
                 "<input id='new-id' style='width:100%' type='text' name='id' placeholder='device id'>" +
             "</div>" +
             "<div class='save-d'>" +
-                "<div class='save-text'>Save</div>" +
-                "<div class='cancel-text' onclick='cancelAddChild()'>Cancel</div>" +
+                "<div class='save-text' onclick='addChild()'>Save</div>" +
+                "<div class='cancel-text' onclick='cancel()'>Cancel</div>" +
             "</div>" +
         "<div>";
     $('.page').append(adding);
 }
 
-function cancelAddChild() {
+function cancel() {
     $('.add-child').remove();
     $('#add-device-button').show();
+}
+
+function addChild() {
+    var name = $("#new-name").val();
+    var id = $("#new-id").val();
+    //== assumes you were given a valid id that is not already in use ==
+    //update children in session
+    children = $.session.get('children');
+    child = children[id];
+    child.name = name;
+    children[id] = child;
+    $.session.set('children', children);
+    //update devices in session
+    devices = $.session.get('registered_devices');
+    devices.push(id);
+    $.session.set('devices', devices);
+    //add child to page
+    var page = $('#page');
+    var childDiv = generateDiv(child);
+    page.append(childDiv);
+    //remove pop-up, and show add device button
+    $('.add-child').remove();
+    $('#add-device-button').show();
+
 }
