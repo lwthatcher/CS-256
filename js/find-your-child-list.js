@@ -11,10 +11,10 @@ function populatePage() {
 
 function generateDiv(child) {
     var result =
-        '<div class="child alt">' +
-        '<div class="child-name">' +
-        child.name +
-        '</div>' +
+        '<div class="child alt" onclick="goToMap(' + child.device_id + ')" >' +
+            '<div class="child-name">' +
+                child.name +
+            '</div>' +
         '</div>';
     return result;
 }
