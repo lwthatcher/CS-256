@@ -15,6 +15,9 @@ function generateDiv(child) {
             '<div class="child-name">' +
                 child.name +
             '</div>' +
+            '<div class="icon-right-small">' +
+                '<img src="../images/child_02.png" width="70%" height="70%"/>' +
+            '</div>' +
         '</div>';
     return result;
 }

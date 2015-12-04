@@ -421,6 +421,17 @@
     transform: translateY(-60%);
 }
 
+.icon-right-small {
+    vertical-align: top;
+    float: right;
+    width: 20%;
+
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .child{
     display: inline-block;
     width: 85%;
