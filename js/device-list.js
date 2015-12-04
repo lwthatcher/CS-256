@@ -65,7 +65,7 @@ function addChild() {
     //update devices in session
     devices = $.session.get('registered_devices');
     devices.push(id);
-    $.session.set('devices', devices);
+    $.session.set('registered_devices', devices);
     //add child to page
     var page = $('#page');
     var childDiv = generateDiv(child);
