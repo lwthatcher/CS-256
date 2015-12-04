@@ -33,7 +33,7 @@ function getChildLocation(child_id) {
     return child.location;
 }
 
-function removeChild(child_id) {
+function unregisterChild(child_id) {
     devices = $.session.get('registered_devices');
     var idx = devices.indexOf(child_id);
     if (idx > -1) {
