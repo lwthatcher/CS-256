@@ -432,7 +432,7 @@
     transform: translateY(-50%);
 }
 
-.child{
+.child {
     display: inline-block;
     width: 85%;
     height: 10%;
@@ -444,6 +444,9 @@
     float: left;
     font-family: sans-serif;
     font-size: x-large;
+}
+
+.link {
     cursor: pointer;
 }
 

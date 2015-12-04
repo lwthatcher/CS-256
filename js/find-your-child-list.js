@@ -11,7 +11,7 @@ function populatePage() {
 
 function generateDiv(child) {
     var result =
-        '<div class="child alt" onclick="goToMap(' + child.device_id + ')" >' +
+        '<div class="child link alt" onclick="goToMap(' + child.device_id + ')" >' +
             '<div class="child-name">' +
                 child.name +
             '</div>' +
