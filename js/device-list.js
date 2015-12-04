@@ -67,9 +67,9 @@ function addChild() {
     devices.push(id);
     $.session.set('registered_devices', devices);
     //add child to page
-    var page = $('#page');
+    var page = $('#add-device-button');
     var childDiv = generateDiv(child);
-    page.append(childDiv);
+    page.before(childDiv);
     //remove pop-up, and show add device button
     $('.add-child').remove();
     $('#add-device-button').show();
