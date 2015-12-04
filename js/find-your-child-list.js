@@ -11,8 +11,8 @@ function populatePage() {
 
 function generateDiv(child) {
     var result =
-        '<div class="location alt">' +
-        '<div class="loc_name">' +
+        '<div class="child alt">' +
+        '<div class="child-name">' +
         child.name +
         '</div>' +
         '</div>';
