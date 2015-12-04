@@ -41,8 +41,13 @@ function openAddChildDialog() {
             "</div>" +
             "<div class='save-d'>" +
                 "<div class='save-text'>Save</div>" +
-                "<div class='cancel-text'>Cancel</div>" +
+                "<div class='cancel-text' onclick='cancelAddChild()'>Cancel</div>" +
             "</div>" +
         "<div>";
     $('.page').append(adding);
+}
+
+function cancelAddChild() {
+    $('.add-child').remove();
+    $('#add-device-button').show();
 }
