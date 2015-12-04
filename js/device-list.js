@@ -28,3 +28,21 @@ function removeChildID(child_id) {
     $('#'+child_id_str).remove();
     unregisterChild(child_id);
 }
+
+function openAddChildDialog() {
+    $('#add-device-button').hide();
+    var adding =
+        "<div class='add-child'>" +
+            "<div class='input-field'>" +
+                "<input id='new-name' style='width:100%' type='text' name='name' placeholder='name'>" +
+            "</div>" +
+            "<div class='input-field'>" +
+                "<input id='new-id' style='width:100%' type='text' name='id' placeholder='device id'>" +
+            "</div>" +
+            "<div class='save-d'>" +
+                "<div class='save-text'>Save</div>" +
+                "<div class='cancel-text'>Cancel</div>" +
+            "</div>" +
+        "<div>";
+    $('.page').append(adding);
+}
