@@ -41,6 +41,7 @@ function clearMapCache() {
 function goToMap(child_id) {
     if (typeof child_id !== 'undefined') {
         $.session.set('map_origin', getChildLocation(child_id));
+        $.session.set('map_zoom', 18);
     }
     else {
         $.session.set('map_origin', getYourLocation());
@@ -56,4 +57,10 @@ function getOrigin() {
     console.log('getting origin');
     loc = $.session.get('map_origin');
     return typeof loc !== 'undefined' ? loc : getYourLocation();
+}
+
+function getZoom() {
+    var defaultZoom = 16;
+    var zoom = $.session.get('map_zoom');
+    return typeof zoom !== 'undefined' ? zoom : defaultZoom;
 }
