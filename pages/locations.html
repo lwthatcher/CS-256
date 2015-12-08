@@ -8,6 +8,7 @@
   <script src="../js/jquery.session.js"></script>
   <script src="../js/children.js"></script>
   <script src="../js/map.js"></script>
+  <script src="../js/location-list.js"></script>
   <title>Find Your Child App</title>
 </head>
 <body>
@@ -74,6 +75,11 @@
           <div  class="loc_edit" onclick="window.location='location.home.html';">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
           <div class="loc_approved">12:00pm - 1:30pm</div>
         </div>
+        <a href="add_location.html">
+        <div class="add-d" id="add-device-button">
+          <div class="add-device" onclick="openAddLocationPage()">Add Location</div>
+        </div>
+        </a>
       </div>
     </div>
     <div class="home" onclick="window.location='home_init.html';"></div>

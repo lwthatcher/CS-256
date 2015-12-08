@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <script src="../js/location-list.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/jquery.session.js"></script>
+
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxF0Ybvq_1yYSdhzdmbdNUqd6qPgtEkUQ&libraries=drawing,geometry"></script>
   <script>
     function initialize() {
@@ -81,14 +85,22 @@
           console.log(point.lat(), point.lng());
         });
         console.log('coordinates', coordinatesArray);
+        
+        drawingManager.setMap(null);
       });
 
       drawingManager.addListener('rectanglecomplete', function(rectangle) {
         console.log('rectangle', rectangle);
+
+        drawingManager.setMap(null);
       });
 
       drawingManager.addListener('circlecomplete', function(circle) {
         console.log('circle', circle);
+        openAddLocationDialog();
+
+        drawingManager.setMap(null);
+        
       });
 
 
