@@ -1,9 +1,11 @@
 function getLocations() {
+    console.log('getting locations', $.session.get('locations'));
     return $.session.get('locations');
 }
 
-function getLocation(loc_id) {
-    var locations = $.session.get('locations');
+function getLocationById(loc_id) {
+    var locations = getLocations();
+    console.log('locations', $.session.get('locations'));
     return locations[loc_id];
 }
 

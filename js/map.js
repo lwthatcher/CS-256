@@ -31,8 +31,16 @@ function add_your_location_marker(loc, map) {
     });
 }
 
-function draw_location(loc_id, map) {
-
+function draw_location(loc, map) {
+    var location = new google.maps.Polygon({
+      paths: loc.points,
+      strokeColor: '#0000FF',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#0000FF',
+      fillOpacity: 0.15
+    });
+    location.setMap(map);
 }
 
 function clearMapCache() {
@@ -54,10 +62,12 @@ function goToMap(child_id) {
 }
 
 function goToLocation(loc_id) {
-    location = getLocation(loc_id);
+    location = getLocationById(loc_id);
+    console.log('going to location', location);
     $.session.set('map_origin', location.center);
     $.session.set('map_zoom', location.zoom);
     $.session.set('map_location', loc_id);
+    window.location='display-location.html';
 }
 
 function getOrigin() {

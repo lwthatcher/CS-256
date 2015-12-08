@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/jquery.session.js"></script>
+  <script src="../js/children.js"></script>
+  <script src="../js/locations.js"></script>
+  <script src="../js/map.js"></script>
+  <script>
+
+    var map;
+    var satelliteMode;
+
+    function initialize() {
+      console.info('initializing google maps');
+      var locID = $.session.get('map_location');
+      console.log('id', locID);
+      var location = getLocationById(locID);
+      console.log('location', location);
+
+      var mapCanvas = document.getElementById('map');
+      var mapOptions = {
+        center: location.center,
+        zoom: location.zoom,
+        mapTypeControl: false,
+        streetViewControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      map = new google.maps.Map(mapCanvas, mapOptions);
+      satelliteMode = false;
+
+      add_your_location_marker(getYourLocation(), map);
+
+      add_child_markers(getRegisteredChildren(), map);
+
+      draw_location(location, map);
+
+      clearMapCache();
+    }
+
+    function toggleSatelliteMode() {
+      if (satelliteMode) {
+        map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+        $("#sat-map").html('Satellite <img src="../images/satellite_01.png" width="80%" height="80%">');
+        satelliteMode = false;
+      }
+      else {
+        map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+        $("#sat-map").html('Map View <img src="../images/map_icon_01.png" width="80%" height="80%">');
+        satelliteMode = true;
+      }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+  <title>Find Your Child App</title>
+</head>
+<body>
+  <div class="marvel-device iphone6 silver phone">
+    <div class="top-bar"></div>
+    <div class="sleep"></div>
+    <div class="volume"></div>
+    <div class="camera"></div>
+    <div class="sensor"></div>
+    <div class="speaker"></div>
+    <div class="screen">
+      <!-- Content goes here -->
+      <div class="page-banner">
+        <div class="button left" onclick="window.location='home.html';">
+          <img src="../images/back_02.png" width="80%" height="80%" class="banner-icon"/>
+        </div>
+        <div class="section-title">Map View</div>
+        <div class="button right" onclick="window.location='home.html';">
+          <img src="../images/home_02.png" width="70%" height="80%" class="banner-icon"/>
+        </div>
+      </div>
+      <div class="page">
+        <div id="map" class="map"></div>
+        <div class="map-links">
+          <div id="sat-map" class="map-links-idv" onclick="toggleSatelliteMode()">
+            Satellite
+            <img id="sat-icon" src="../images/satellite_01.png" width="80%" height="80%">
+          </div>
+          <div class="map-links-idv" onclick="window.location='short_range.html';">
+            Short Range
+            <img src="../images/radar_icon_01.png" width="80%" height="80%">
+          </div>
+          <div class="map-links-idv" onclick="window.location='3D_view.html';">
+            3D Mode
+            <img src="../images/3D_mode_icon_02.png" width="80%" height="80%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home" onclick="window.location='home_init.html';"></div>
+    <div class="bottom-bar"></div>
+  </div>
+</body>
+</html>
