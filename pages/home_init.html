@@ -7,6 +7,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="../js/jquery.session.js"></script>
   <script src="../js/children.js"></script>
+  <script src="../js/locations.js"></script>
   <title>Find Your Child App</title>
 </head>
 <body>
@@ -15,37 +16,139 @@
     var child1 = {
       name: 'Sally',
       device_id: 1,
+      medical:['nut','dairy'],
       location: {lat: 40.248660, lng: -111.648803}
     }
 
     var child2 = {
       name: 'Billy',
       device_id: 2,
+      medical:['gluten'],
       location: {lat: 40.251525, lng: -111.647775}
     }
 
     var child3 = {
       name: 'Fred',
       device_id: 3,
+      medical:['peach'],
       location: {lat: 40.248215, lng: -111.620414}
     }
 
     var child4 = {
       name: 'Tom',
       device_id: 4,
+      medical:['None'],
       location: {lat: 40.223545, lng: -111.644433}
     }
 
     var child5 = {
       name: 'George',
       device_id: 5,
+      medical:['None'],
       location: {lat: 40.256313, lng: -111.643755}
     }
 
     var child6 = {
       name: 'Beth',
       device_id: 6,
+      medical:['snakes'],
       location: {lat: 40.258235, lng: -111.642044}
+    }
+
+
+
+    var loc1 = {
+      id: 1,
+      name: 'Home',
+      type: 'polygon',
+      center: {lat: 40.258223, lng: -111.642124},
+      zoom: 20,
+      points: [
+        {lat: 40.258338488417536, lng: -111.64219871163368},
+        {lat: 40.258256612497064, lng: -111.64193585515022},
+        {lat: 40.25814607984728, lng: -111.64199218153954},
+        {lat: 40.25823614350147, lng: -111.64226040244102}
+      ]
+    }
+
+    var loc6 = {
+      id: 6,
+      name: 'Cemetery',
+      type: 'polygon',
+      center: {lat: 40.223825, lng: -111.644636},
+      zoom: 16,
+      points: [
+        {lat: 40.22578602670785, lng: -111.64671421051025},
+        {lat: 40.22580240975573, lng: -111.6437315940857},
+        {lat: 40.22229634720147, lng: -111.64098501205444},
+        {lat: 40.22232911498124, lng: -111.6468858718872}
+      ]
+    }
+
+    var loc3 = {
+      id: 3,
+      name: 'High School',
+      type: 'polygon',
+      center: {lat: 40.248717, lng: -111.660281},
+      zoom: 17,
+      points: [
+        {lat: 40.250536291575564, lng: -111.66192770004272},
+        {lat: 40.250552668635905, lng: -111.65873050689697},
+        {lat: 40.247228044136556, lng: -111.65870904922485},
+        {lat: 40.2472771777072, lng: -111.66091918945312},
+        {lat: 40.247080643210694, lng: -111.66091918945312},
+        {lat: 40.247080643210694, lng: -111.66199207305908}
+      ]
+    }
+
+    var loc4 = {
+      id: 4,
+      name: 'Park',
+      type: 'polygon',
+      center: {lat: 40.255935, lng: -111.644117},
+      zoom: 17,
+      points: [
+        {lat: 40.25661600285842, lng: -111.64509952068329},
+        {lat: 40.25664875403261, lng: -111.64333999156952},
+        {lat: 40.255019363894014, lng: -111.64340436458588},
+        {lat: 40.255011175904805, lng: -111.6451746225357},
+        {lat: 40.255289566982455, lng: -111.64516389369965},
+        {lat: 40.25537963443884, lng: -111.64496004581451},
+        {lat: 40.25566621191158, lng: -111.64494931697845},
+        {lat: 40.255789030456945, lng: -111.64486348628998},
+        {lat: 40.255887285132715, lng: -111.6448849439621},
+        {lat: 40.255887285132715, lng: -111.64507806301117}
+      ]
+    }
+
+    var loc5 = {
+      id: 5,
+      name: 'Piano Lessons',
+      type: 'polygon',
+      center: {lat: 40.259275, lng: -111.659581},
+      zoom: 19,
+      points: [
+        {lat: 40.259500092364675, lng: -111.6597068309784},
+        {lat: 40.25950418608783, lng: -111.65955662727356},
+        {lat: 40.259115281283705, lng: -111.65942251682281},
+        {lat: 40.25908253130341, lng: -111.65962636470795}
+      ]
+    }
+
+    var loc2 = {
+      id: 2,
+      name: 'School',
+      type: 'polygon',
+      center: {lat: 40.247337, lng: -111.641866},
+      zoom: 17,
+      points: [
+        {lat: 40.24849322221511, lng: -111.64301812648773},
+        {lat: 40.24846865587563, lng: -111.64067924022675},
+        {lat: 40.24610205670234, lng: -111.64065778255463},
+        {lat: 40.246151191090306, lng: -111.64200961589813},
+        {lat: 40.24706835978569, lng: -111.64199888706207},
+        {lat: 40.24706835978569, lng: -111.64309322834015}
+      ]
     }
 
     $.session.clear();
@@ -54,14 +157,8 @@
     $.session.set('your_location', {lat: 40.248679, lng: -111.648513});
     console.log('registered', getRegisteredChildren());
 
-    var home_poly = [
-        {lat: 40.258338488417536, lng: -111.64219871163368},
-        {lat: 40.258256612497064, lng: -111.64193585515022},
-        {lat: 40.25814607984728, lng: -111.64199218153954},
-        {lat: 40.25823614350147, lng: -111.64226040244102}
-      ];
-    $.session.set('loc_home', home_poly);
-    console.log($.session.get('loc_home'));
+    $.session.set('locations', toLocationMap([loc1, loc2, loc3, loc4, loc5, loc6]));
+    console.log('locations', $.session.get('locations'));
 </script>
   <div class="marvel-device iphone6 silver phone">
     <div class="top-bar"></div>

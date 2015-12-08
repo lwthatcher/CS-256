@@ -281,6 +281,9 @@ input[id^='new-']{
     cursor: pointer;
 }
 
+ul{
+    list-style:none;
+}
 .location{
     width: 85%;
     height: 10%;
@@ -457,6 +460,15 @@ input[id^='new-']{
     float: left;
     font-family: sans-serif;
     font-size: x-large;
+}
+
+.medical_info {
+    margin-left:10%;
+    height:15%;
+    padding-top: 0%;
+    margin-bottom:5%;
+    text-align: left;    
+    background-color: rgb(60, 120, 216);
 }
 
 .link {
