@@ -65,8 +65,8 @@
       ]
     }
 
-    var loc2 = {
-      id: 2,
+    var loc6 = {
+      id: 6,
       name: 'Cemetery',
       type: 'polygon',
       center: {lat: 40.223825, lng: -111.644636},
@@ -129,8 +129,8 @@
       ]
     }
 
-    var loc6 = {
-      id: 6,
+    var loc2 = {
+      id: 2,
       name: 'School',
       type: 'polygon',
       center: {lat: 40.247337, lng: -111.641866},
@@ -151,6 +151,8 @@
     $.session.set('your_location', {lat: 40.248679, lng: -111.648513});
     console.log('registered', getRegisteredChildren());
 
+    $.session.set('locations', toLocationMap([loc1, loc2, loc3, loc4, loc5, loc6]));
+    console.log('locations', $.session.get('locations'));
 </script>
   <div class="marvel-device iphone6 silver phone">
     <div class="top-bar"></div>
