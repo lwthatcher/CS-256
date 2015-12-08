@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/devices.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
-  <title>Find Your Child App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="../js/jquery.session.js"></script>
+  <script src="../js/children.js"></script>
+  <script src="../js/medical_info.js"></script>
+  
+  <title>Medical Information</title>
 </head>
 <body>
   <div class="marvel-device iphone6 silver phone">
@@ -15,18 +20,18 @@
     <div class="sensor"></div>
     <div class="speaker"></div>
     <div class="screen">
-      <!-- Content goes here -->
       <div class="page-banner">
         <div class="button left" onclick="window.location='nearby_hospital.html';">
           <img src="../images/back_02.png" width="80%" height="80%" class="banner-icon"/>
         </div>
-        <div class="section-title">Emergency</div>
+        <div class="section-title">Medical Info</div>
         <div class="button right" onclick="window.location='home.html';">
           <img src="../images/home_02.png" width="70%" height="80%" class="banner-icon"/>
         </div>
       </div>
-      <div class="page">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d6090.895730000108!2d-111.64799560672873!3d40.24357694335767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x874d90ba3dc90099%3A0xccd44eb10aa3ab3c!2zSGFyb2xkIEIuIExlZSBMaWJyYXJ5LCDtlITroZzrs7Qg7Jyg7YOA!3m2!1d40.2487764!2d-111.64920869999999!4m5!1s0x874d90a3ce5a5689%3A0x2f55c59e9e953dfb!2sUtah+Valley+Pediatrics%2C+North+University+Avenue%2C+Provo%2C+UT!3m2!1d40.2524744!2d-111.6591164!5e0!3m2!1sko!2sus!4v1448963616668" width="350" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div id="page" class="page">
+        <!-- Content goes here -->
+        <script>populatePage()</script>
       </div>
     </div>
     <div class="home" onclick="window.location='home_init.html';"></div>
