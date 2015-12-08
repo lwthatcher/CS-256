@@ -49,7 +49,7 @@ function goToMap(child_id) {
     window.location='map.html';
 }
 
-function goToLocation() {
+function goToLocation(loc_id) {
 
 }
 
