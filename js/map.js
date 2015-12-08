@@ -31,6 +31,10 @@ function add_your_location_marker(loc, map) {
     });
 }
 
+function draw_location(loc_id, map) {
+
+}
+
 function clearMapCache() {
     console.log('clearing cache');
     $.session.remove('map_origin');
@@ -50,7 +54,10 @@ function goToMap(child_id) {
 }
 
 function goToLocation(loc_id) {
-
+    location = getLocation(loc_id);
+    $.session.set('map_origin', location.center);
+    $.session.set('map_zoom', location.zoom);
+    $.session.set('map_location', loc_id);
 }
 
 function getOrigin() {
@@ -63,4 +70,9 @@ function getZoom() {
     var defaultZoom = 16;
     var zoom = $.session.get('map_zoom');
     return typeof zoom !== 'undefined' ? zoom : defaultZoom;
+}
+
+function getCurrentLocation() {
+    loc = $.session.get('map_location');
+    return typeof loc !== 'undefined' ? loc : -1;
 }

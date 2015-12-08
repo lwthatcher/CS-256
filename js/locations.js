@@ -2,6 +2,11 @@ function getLocations() {
     return $.session.get('locations');
 }
 
+function getLocation(loc_id) {
+    var locations = $.session.get('locations');
+    return locations[loc_id];
+}
+
 function toLocationMap(locations) {
     var loc_map = {};
     $.each(locations, function(i, loc) {
@@ -17,6 +22,6 @@ function createLocationId() {
         if (id > max) {
             max = id;
         }
-    }
+    });
     return max + 1;
 }
