@@ -50,9 +50,19 @@ function generateLocDiv(loc) {
                 '<img src="../images/edit_02.png" width="90%" height="90%"/>' +
             '</div>' +
             '<div class="loc_approved">' +
-                '<img class="loc-center" src="../images/check_01.png" width="40%" height="40%"/>' +
+                getApprovalInnerHtml(loc) +
             '</div>' +
     '</div>';
 
     return result;
+}
+
+function getApprovalInnerHtml(loc) {
+    if (loc.approval == 'always') {
+        return '<img class="loc-center" src="../images/check_01.png" width="40%" height="40%"/>';
+    }
+    else if (loc.approval == 'never') {
+        return '<img class="loc-center" src="../images/not-allowed.png" width="40%" height="40%"/>';
+    }
+    else return loc.approval;
 }
