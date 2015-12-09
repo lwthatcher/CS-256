@@ -29,3 +29,12 @@ function createLocationId() {
 function openAddLocationPage() {
     window.location='add_location.html';
 }
+
+
+function populateLocations(locations) {
+    var page = $('#page');
+    $.each(locations, function(id, location) {
+            var locDiv = generateLocDiv(location);
+            page.append(locDiv);
+    });
+}
