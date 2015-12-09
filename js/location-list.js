@@ -15,7 +15,7 @@ function openAddLocationDialog() {
 
 function cancel() {
     $('.add-location').remove();
-    document.location.href = "locations.html";
+    document.location.href = "manage-locations.html";
 }
 
 function hidePark() {
@@ -51,7 +51,7 @@ function addLocation() {
     //page.before(childDiv);
     //remove pop-up, and show add device button
     $('.add-location').remove();
-    document.location.href = "locations.html";
+    document.location.href = "manage-locations.html";
     //var parkDiv = document.getElementById("park");
     //parkDiv.style.visibility = "visible";
     $.session.set("isParkCreated",true,null,null);
