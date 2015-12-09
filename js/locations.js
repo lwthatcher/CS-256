@@ -38,3 +38,21 @@ function populateLocations(locations) {
             page.append(locDiv);
     });
 }
+
+function generateLocDiv(loc) {
+    result =
+        '<div class="location">' +
+            '<div class="loc_name">'+ loc.name +'</div>' +
+            '<div  class="loc_map" onclick="goToLocation(' + loc.id + ')">View' +
+                '<img src="../images/map_icon_02.png" width="90%" height="90%"/>' +
+            '</div>' +
+            '<div  class="loc_edit" onclick="goToLocation(' + loc.id + ')">Edit' +
+                '<img src="../images/edit_02.png" width="90%" height="90%"/>' +
+            '</div>' +
+            '<div class="loc_approved">' +
+                '<img class="loc-center" src="../images/check_01.png" width="40%" height="40%"/>' +
+            '</div>' +
+    '</div>';
+
+    return result;
+}
