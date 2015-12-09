@@ -41,7 +41,6 @@ function populateLocations(locations) {
     			var locDiv = generateLocDiv(location);
 				page.append(locDiv);
     		}
-
     });
 }
 
