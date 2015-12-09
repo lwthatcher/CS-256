@@ -42,7 +42,7 @@ function populateLocations(locations) {
 function generateLocDiv(loc) {
     result =
         '<div class="location">' +
-            '<div class="loc_name">'+ loc.name +'</div>' +
+            '<div class="loc_name2">'+ loc.name +'</div>' +
             '<div  class="loc_map" onclick="goToLocation(' + loc.id + ')">View' +
                 '<img src="../images/map_icon_02.png" width="90%" height="90%"/>' +
             '</div>' +
