@@ -40,12 +40,6 @@ function openAddLocationDialog() {
             "<div class='input-field'>" +
                 "<input id='new-title' style='width:100%' type='text' name='title' placeholder='title of location'>" +
             "</div>" +
-            "<div class='input-field'>" +
-                "<input id='new-time' style='width:100%' type='text' name='id' placeholder='time frame at location'>" +
-            "</div>" +
-            "<div class='never-field'>" +
-            "<input id='never-checkbox' type='checkbox' name='never' value='never' onclick> Never<br>" +
-            "</div>" +
             "<div class='save-d'>" +
                 "<div class='save-text' onclick='addLocation()'>Save</div>" +
                 "<div class='cancel-text' onclick='cancel()'>Cancel</div>" +
@@ -65,26 +59,25 @@ function cancel() {
 
 function addLocation() {
     var name = $("#new-title").val();
-    var time = $("#new-time").val();
-    var never = document.getElementById("never-checkbox").checked;
+    var id = 4;
     
     //== assumes you were given a valid id that is not already in use ==
     //update children in session
-    children = $.session.get('children');
-    child = children[id];
-    child.name = name;
-    children[id] = child;
-    $.session.set('children', children);
+    //locations = $.session.get('locations');
+    //location = locations[id];
+    //location.name = name;
+    //locations[id] = location;
+    //$.session.set('locations', locations);
     //update devices in session
-    devices = $.session.get('registered_devices');
-    devices.push(id);
-    $.session.set('registered_devices', devices);
+    //devices = $.session.get('registered_devices');
+    //devices.push(id);
+    //$.session.set('registered_devices', devices);
     //add child to page
-    var page = $('#add-device-button');
-    var childDiv = generateDiv(child);
-    page.before(childDiv);
+    //var page = $('#add-device-button');
+    //var childDiv = generateDiv(child);
+    //page.before(childDiv);
     //remove pop-up, and show add device button
-    $('.add-child').remove();
-    $('#add-device-button').show();
+    $('.add-location').remove();
+    document.location.href = "locations.html";
 
 }

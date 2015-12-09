@@ -85,12 +85,14 @@
           console.log(point.lat(), point.lng());
         });
         console.log('coordinates', coordinatesArray);
-        
+        openAddLocationDialog();
+
         drawingManager.setMap(null);
       });
 
       drawingManager.addListener('rectanglecomplete', function(rectangle) {
         console.log('rectangle', rectangle);
+        openAddLocationDialog();
 
         drawingManager.setMap(null);
       });
