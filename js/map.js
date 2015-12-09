@@ -50,7 +50,14 @@ function clearMapCache() {
     $.session.remove('map_location');
 }
 
-function goToMap(child_id) {
+function goStraightToMap() {
+    $.session.set('last_page', "home.html", null, null);
+    window.location='map.html';
+    document.location.href = "map.html";
+}
+
+function goToMap(child_id, lastPage) {
+    $.session.set('last_page', lastPage, null, null);
     if (typeof child_id !== 'undefined') {
         $.session.set('map_origin', getChildLocation(child_id));
         $.session.set('map_zoom', 18);
@@ -59,6 +66,11 @@ function goToMap(child_id) {
         $.session.set('map_origin', getYourLocation());
     }
     window.location='map.html';
+}
+
+function goBack() {
+    var page = $.session.get("last_page");
+    document.location.href = page;
 }
 
 function goToLocation(loc_id) {
