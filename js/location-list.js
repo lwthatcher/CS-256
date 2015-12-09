@@ -1,38 +1,3 @@
-
-function populatePage() {
-    var page = $('#page');
-    var children = getRegisteredChildren();
-
-    $.each(children, function(i, child) {
-        var childDiv = generateDiv(child);
-        page.append(childDiv);
-    });
-}
-
-function generateDiv(child) {
-    var child_id_str = 'child-' + child.device_id.toString();
-    var result =
-        '<div class="child alt" id="' + child_id_str + '" >' +
-            '<div class="child-name">' +
-                child.name +
-            '</div>' +
-            '<div class="icon-right-small link" onclick="removeChildID(\''+ child.device_id + '\');" >' +
-                '<img src="../images/x_icon_02.png" width="70%" height="70%"/>' +
-            '</div>' +
-        '</div>';
-    return result;
-}
-
-function removeChildID(child_id) {
-    var child_id_str = 'child-' + child_id.toString();
-    $('#'+child_id_str).remove();
-    unregisterChild(child_id);
-}
-
-function neverAllowed(){
-    document.getElementById("new-time").disabled = true;
-}
-
 function openAddLocationDialog() {
     $('#add-device-button').hide();
     var adding =
@@ -48,22 +13,30 @@ function openAddLocationDialog() {
     $('.page').append(adding);
 }
 
-function openAddLocationPage() {
-    
-}
-
 function cancel() {
     $('.add-location').remove();
     document.location.href = "locations.html";
 }
 
+function hidePark() {
+    var parkDiv = document.getElementById("park");
+    if ($.session.get('isParkCreated') == true)
+    {
+        parkDiv.style.visibility = "visible";
+    }
+    else
+    {
+         parkDiv.style.visibility = "hidden";
+    }
+}
+
 function addLocation() {
     var name = $("#new-title").val();
     var id = 4;
-    
+    console.log("");
     //== assumes you were given a valid id that is not already in use ==
     //update children in session
-    //locations = $.session.get('locations');
+    //var locations = $.session.get('locations');
     //location = locations[id];
     //location.name = name;
     //locations[id] = location;
@@ -79,5 +52,8 @@ function addLocation() {
     //remove pop-up, and show add device button
     $('.add-location').remove();
     document.location.href = "locations.html";
-
+    //var parkDiv = document.getElementById("park");
+    //parkDiv.style.visibility = "visible";
+    $.session.set("isParkCreated",true,null,null);
+    
 }

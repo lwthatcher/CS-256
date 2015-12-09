@@ -22,7 +22,7 @@
     <div class="screen">
       <!-- Content goes here -->
       <div class="page-banner">
-        <div class="button left" onclick="window.location='home.html';">
+        <div class="button left" onclick="window.location='individual-locations.html';">
           <img src="../images/back_02.png" width="80%" height="80%" class="banner-icon"/>
         </div>
         <div class="section-title">Manage Locations</div>
@@ -58,23 +58,24 @@
           <div class="loc_approved">8:00am - 4:00pm</div>
         </div>
         <div class="location alt">
-          <div class="loc_name">Park</div>
-          <div  class="loc_map" onclick="window.location='location.park.html';">View<img src="../images/map_icon_02.png" width="90%" height="90%"/></div>
-          <div  class="loc_edit" onclick="window.location='location.home.html';">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
-          <div class="loc_approved"><img class="loc-center" src="../images/check_01.png" width="40%" height="40%"/></div>
-        </div>
-        <div class="location">
           <div class="loc_name">Cemetery</div>
           <div  class="loc_map" onclick="window.location='location.cemetery.html';">View<img src="../images/map_icon_02.png" width="90%" height="90%"/></div>
           <div  class="loc_edit" onclick="window.location='location.home.html';">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
-          <div class="loc_approved"><img class="loc-center" src="../images/x_icon_02.png" width="40%" height="40%"/></div>
+          <div class="loc_approved"><img class="loc-center" src="../images/not-allowed.png" width="40%" height="40%"/></div>
         </div>
-        <div class="location alt">
+        <div class="location">
           <div class="loc_name">Piano<br/>  Lessons</div>
           <div  class="loc_map" onclick="window.location='location.piano_lessons.html';">View<img src="../images/map_icon_02.png" width="90%" height="90%"/></div>
           <div  class="loc_edit" onclick="window.location='location.home.html';">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
           <div class="loc_approved">12:00pm - 1:30pm</div>
         </div>
+        <div id="park" class="location alt">
+          <div class="loc_name">Park</div>
+          <div  class="loc_map" onclick="window.location='location.park.html';">View<img src="../images/map_icon_02.png" width="90%" height="90%"/></div>
+          <div  class="loc_edit" onclick="window.location='location.home.html';">Edit<img src="../images/edit_02.png" width="90%" height="90%"/></div>
+          <div class="loc_approved"><img class="loc-center" src="../images/check_01.png" width="40%" height="40%"/></div>
+        </div>
+        <script>hidePark()</script>
         <a href="add_location.html">
         <div class="add-d" id="add-device-button">
           <div class="add-device" onclick="openAddLocationPage()">Add Location</div>

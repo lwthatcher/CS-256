@@ -9,17 +9,19 @@ function populatePage() {
     });
 }
 
-
+function goToLocationsPage()
+{
+    document.location.href = "locations.html";
+}
 
 function generateDiv(child) {
-    var last_page = "'find-your-child.html'";
     var result =
-        '<div class="child link alt" onclick="goToMap(' + child.device_id + ',' + last_page + ')" >' +
+        '<div class="child link alt" onclick="goToLocationsPage()" >' +
             '<div class="child-name">' +
                 child.name +
             '</div>' +
             '<div class="icon-right-small">' +
-                '<img src="../images/child_02.png" width="70%" height="70%"/>' +
+                '<img src="../images/manage_locations_02.png" width="70%" height="70%"/>' +
             '</div>' +
         '</div>';
     return result;
