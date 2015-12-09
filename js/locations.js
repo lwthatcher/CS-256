@@ -25,3 +25,7 @@ function createLocationId() {
     });
     return max + 1;
 }
+
+function openAddLocationPage() {
+    window.location='add_location.html';
+}
