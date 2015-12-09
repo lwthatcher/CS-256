@@ -33,9 +33,15 @@ function openAddLocationPage() {
 
 function populateLocations(locations) {
     var page = $('#page');
+    var showPark = $.session.get('isParkCreated');
+    console.log('showPark', showPark);
     $.each(locations, function(id, location) {
-            var locDiv = generateLocDiv(location);
-            page.append(locDiv);
+    		if (id != 4 || showPark)
+    		{
+    			var locDiv = generateLocDiv(location);
+				page.append(locDiv);
+    		}
+
     });
 }
 
