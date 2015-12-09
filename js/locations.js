@@ -51,7 +51,7 @@ function generateLocDiv(loc) {
             '<div  class="loc_map" onclick="goToLocation(' + loc.id + ')">View' +
                 '<img src="../images/map_icon_02.png" width="90%" height="90%"/>' +
             '</div>' +
-            '<div  class="loc_edit" onclick="goToLocation(' + loc.id + ')">Edit' +
+            '<div  class="loc_edit" onclick="editLocation(' + loc.id + ')">Edit' +
                 '<img src="../images/edit_02.png" width="90%" height="90%"/>' +
             '</div>' +
             '<div class="loc_approved">' +
